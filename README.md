@@ -17,12 +17,13 @@ install selenium2library
 ```
 pip install robotframework-selenium2library
 ```
-```
-robot .\test\registration_test.robot
-```
 
 #### chromedriver
 download chromedriver that match your chrome version in `%PATH%` at [download chromedriver](https://chromedriver.chromium.org/downloads)
 
+### run test
+```
+robot .\test\registration_test.robot
+```
 ## Final thoughts
 I think robot framework is easy to use but it also lack of functionality to test more complex function. So I perfer another JS framework more than robot framwork especially since frontend development is mostly based on JS frameworks like Angular, React or Vue.

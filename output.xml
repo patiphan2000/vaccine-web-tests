@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.7 on win32)" generated="20211128 23:57:34.200" rpa="false" schemaversion="2">
+<suite id="s1" name="Registration Test" source="C:\Users\FUKFIX\Documents\SV&amp;V\vaccine-web-tests\test\registration_test.robot">
+<kw name="Log To Console" library="BuiltIn" type="SETUP">
+<arg>Hello World</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211128 23:57:34.374" endtime="20211128 23:57:34.374"/>
+</kw>
+<test id="s1-t1" name="Try to open reservation page">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Browser</arg>
+<arg>${MAIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>AND</arg>
+<arg>Log to console</arg>
+<arg>${MESSAGE}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${MAIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211128 23:57:34.375" level="INFO">Opening browser 'gc' to base url 'https://vaccine-haven.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20211128 23:57:34.375" endtime="20211128 23:57:48.424"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${MESSAGE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211128 23:57:48.424" endtime="20211128 23:57:48.425"/>
+</kw>
+<status status="PASS" starttime="20211128 23:57:34.375" endtime="20211128 23:57:48.425"/>
+</kw>
+<kw name="Go to">
+<arg>${RESERV_URL}</arg>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${wanted_url}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211128 23:57:48.425" level="INFO">Opening browser 'gc' to base url 'https://vaccine-haven.herokuapp.com/reservation'.</msg>
+<status status="PASS" starttime="20211128 23:57:48.425" endtime="20211128 23:57:53.839"/>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<arg>0.1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20211128 23:57:53.839" endtime="20211128 23:57:53.839"/>
+</kw>
+<status status="PASS" starttime="20211128 23:57:48.425" endtime="20211128 23:57:53.839"/>
+</kw>
+<kw name="Page Should Be">
+<arg>${RESERV_URL}</arg>
+<kw name="Location Should Be" library="Selenium2Library">
+<arg>${wanted_url}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20211128 23:57:53.942" level="INFO">Current location is 'https://vaccine-haven.herokuapp.com/reservation'.</msg>
+<status status="PASS" starttime="20211128 23:57:53.840" endtime="20211128 23:57:53.942"/>
+</kw>
+<status status="PASS" starttime="20211128 23:57:53.840" endtime="20211128 23:57:53.943"/>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20211128 23:57:53.943" endtime="20211128 23:57:58.378"/>
+</kw>
+<status status="PASS" starttime="20211128 23:57:34.374" endtime="20211128 23:57:58.378"/>
+</test>
+<test id="s1-t2" name="Vaccine Reservation">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Browser</arg>
+<arg>${MAIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>AND</arg>
+<arg>Log to console</arg>
+<arg>${MESSAGE}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${MAIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211128 23:57:58.380" level="INFO">Opening browser 'gc' to base url 'https://vaccine-haven.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20211128 23:57:58.379" endtime="20211128 23:58:12.500"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${MESSAGE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211128 23:58:12.500" endtime="20211128 23:58:12.500"/>
+</kw>
+<status status="PASS" starttime="20211128 23:57:58.379" endtime="20211128 23:58:12.500"/>
+</kw>
+<kw name="Go to">
+<arg>${RESERV_URL}</arg>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${wanted_url}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211128 23:58:12.501" level="INFO">Opening browser 'gc' to base url 'https://vaccine-haven.herokuapp.com/reservation'.</msg>
+<status status="PASS" starttime="20211128 23:58:12.501" endtime="20211128 23:58:17.917"/>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<arg>0.1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20211128 23:58:17.917" endtime="20211128 23:58:17.917"/>
+</kw>
+<status status="PASS" starttime="20211128 23:58:12.501" endtime="20211128 23:58:17.917"/>
+</kw>
+<kw name="Input Information">
+<arg>citizen_id</arg>
+<arg>${CITIZEN_ID}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>identifier=${name}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211128 23:58:17.918" level="INFO">Typing text '9621054668494' into text field 'identifier=citizen_id'.</msg>
+<status status="PASS" starttime="20211128 23:58:17.918" endtime="20211128 23:58:18.428"/>
+</kw>
+<status status="PASS" starttime="20211128 23:58:17.918" endtime="20211128 23:58:18.429"/>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<arg>identifier=site_name</arg>
+<arg>${SITE_NAME}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20211128 23:58:18.429" level="INFO">Selecting options from selection list 'identifier=site_name' by value OGYHSite.</msg>
+<status status="PASS" starttime="20211128 23:58:18.429" endtime="20211128 23:58:19.434"/>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<arg>identifier=vaccine_name</arg>
+<arg>${PERFER_VACCINE}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20211128 23:58:19.435" level="INFO">Selecting options from selection list 'identifier=vaccine_name' by value Pfizer.</msg>
+<status status="PASS" starttime="20211128 23:58:19.435" endtime="20211128 23:58:20.426"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>identifier=reserve__btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211128 23:58:20.427" level="INFO">Clicking button 'identifier=reserve__btn'.</msg>
+<status status="PASS" starttime="20211128 23:58:20.427" endtime="20211128 23:58:21.217"/>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20211128 23:58:21.217" endtime="20211128 23:58:25.524"/>
+</kw>
+<status status="PASS" starttime="20211128 23:57:58.379" endtime="20211128 23:58:25.524"/>
+</test>
+<test id="s1-t3" name="Check Vaccine Reservation">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Browser</arg>
+<arg>${MAIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>AND</arg>
+<arg>Log to console</arg>
+<arg>${MESSAGE}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${MAIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211128 23:58:25.525" level="INFO">Opening browser 'gc' to base url 'https://vaccine-haven.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20211128 23:58:25.525" endtime="20211128 23:58:39.886"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${MESSAGE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211128 23:58:39.887" endtime="20211128 23:58:39.887"/>
+</kw>
+<status status="PASS" starttime="20211128 23:58:25.525" endtime="20211128 23:58:39.887"/>
+</kw>
+<kw name="Go to">
+<arg>${INFO_URL}</arg>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${wanted_url}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211128 23:58:39.888" level="INFO">Opening browser 'gc' to base url 'https://vaccine-haven.herokuapp.com/info'.</msg>
+<status status="PASS" starttime="20211128 23:58:39.888" endtime="20211128 23:58:45.413"/>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<arg>0.1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20211128 23:58:45.413" endtime="20211128 23:58:45.413"/>
+</kw>
+<status status="PASS" starttime="20211128 23:58:39.887" endtime="20211128 23:58:45.413"/>
+</kw>
+<kw name="Input Information">
+<arg>citizen_id</arg>
+<arg>${CITIZEN_ID}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>identifier=${name}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211128 23:58:45.414" level="INFO">Typing text '9621054668494' into text field 'identifier=citizen_id'.</msg>
+<status status="PASS" starttime="20211128 23:58:45.414" endtime="20211128 23:58:45.924"/>
+</kw>
+<status status="PASS" starttime="20211128 23:58:45.414" endtime="20211128 23:58:45.925"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>identifier=info__btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211128 23:58:45.925" level="INFO">Clicking button 'identifier=info__btn'.</msg>
+<status status="PASS" starttime="20211128 23:58:45.925" endtime="20211128 23:58:46.714"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>identifier=cancel__btn</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211128 23:58:46.714" endtime="20211128 23:58:48.620"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${vac_info}</var>
+<arg>//*[@id="reserve_vaccine_value"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211128 23:58:48.836" level="INFO">${vac_info} = Pfizer</msg>
+<status status="PASS" starttime="20211128 23:58:48.621" endtime="20211128 23:58:48.836"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${vac_info}</arg>
+<arg>${PERFER_VACCINE}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211128 23:58:48.837" endtime="20211128 23:58:48.837"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${vac_info}</var>
+<arg>//*[@id="reserve_site_value"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211128 23:58:49.053" level="INFO">${vac_info} = OGYHSite</msg>
+<status status="PASS" starttime="20211128 23:58:48.837" endtime="20211128 23:58:49.053"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${vac_info}</arg>
+<arg>${SITE_NAME}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20211128 23:58:49.054" endtime="20211128 23:58:49.054"/>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20211128 23:58:49.055" endtime="20211128 23:58:53.353"/>
+</kw>
+<status status="PASS" starttime="20211128 23:58:25.525" endtime="20211128 23:58:53.354"/>
+</test>
+<test id="s1-t4" name="Cancel reservation">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Open Browser</arg>
+<arg>${MAIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>AND</arg>
+<arg>Log to console</arg>
+<arg>${MESSAGE}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${MAIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211128 23:58:53.355" level="INFO">Opening browser 'gc' to base url 'https://vaccine-haven.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20211128 23:58:53.355" endtime="20211128 23:59:07.549"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${MESSAGE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211128 23:59:07.550" endtime="20211128 23:59:07.550"/>
+</kw>
+<status status="PASS" starttime="20211128 23:58:53.355" endtime="20211128 23:59:07.550"/>
+</kw>
+<kw name="Go to">
+<arg>${INFO_URL}</arg>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${wanted_url}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211128 23:59:07.551" level="INFO">Opening browser 'gc' to base url 'https://vaccine-haven.herokuapp.com/info'.</msg>
+<status status="PASS" starttime="20211128 23:59:07.550" endtime="20211128 23:59:13.001"/>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<arg>0.1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20211128 23:59:13.002" endtime="20211128 23:59:13.002"/>
+</kw>
+<status status="PASS" starttime="20211128 23:59:07.550" endtime="20211128 23:59:13.002"/>
+</kw>
+<kw name="Input Information">
+<arg>citizen_id</arg>
+<arg>${CITIZEN_ID}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>identifier=${name}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211128 23:59:13.003" level="INFO">Typing text '9621054668494' into text field 'identifier=citizen_id'.</msg>
+<status status="PASS" starttime="20211128 23:59:13.003" endtime="20211128 23:59:13.513"/>
+</kw>
+<status status="PASS" starttime="20211128 23:59:13.002" endtime="20211128 23:59:13.513"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>identifier=info__btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211128 23:59:13.514" level="INFO">Clicking button 'identifier=info__btn'.</msg>
+<status status="PASS" starttime="20211128 23:59:13.513" endtime="20211128 23:59:14.301"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>identifier=cancel__btn</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211128 23:59:14.302" endtime="20211128 23:59:16.192"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>identifier=cancel__btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211128 23:59:16.192" level="INFO">Clicking button 'identifier=cancel__btn'.</msg>
+<status status="PASS" starttime="20211128 23:59:16.192" endtime="20211128 23:59:16.965"/>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20211128 23:59:16.965" endtime="20211128 23:59:21.245"/>
+</kw>
+<status status="PASS" starttime="20211128 23:58:53.354" endtime="20211128 23:59:21.245"/>
+</test>
+<kw name="Log To Console" library="BuiltIn" type="TEARDOWN">
+<arg>Goodbye!!!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211128 23:59:21.246" endtime="20211128 23:59:21.246"/>
+</kw>
+<status status="PASS" starttime="20211128 23:57:34.201" endtime="20211128 23:59:21.246"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Registration Test">Registration Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
