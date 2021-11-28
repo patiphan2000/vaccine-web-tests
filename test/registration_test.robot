@@ -44,7 +44,6 @@ Vaccine Reservation
     Select From List by value    identifier=vaccine_name    Sinovac
     Select From List by value    identifier=vaccine_name    Pfizer
     Click Button    identifier=reserve__btn
-    Page Should Be    ${MAIN_URL}
 
 Cancel reservation
     Go to    ${INFO_URL}
