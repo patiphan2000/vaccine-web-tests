@@ -1,18 +1,19 @@
 *** Settings ***
 Library         Selenium2Library
-Test Setup      Run Keywords  Open Browser  ${BASE_URL}  ${BROWSER}
+Test Setup      Run Keywords  Open Browser  ${MAIN_URL}  ${BROWSER}
 ...  AND        Log to console  ${MESSAGE}
 Test Teardown   Close All Browsers
 Suite Setup     Log to console  Hello World
 Suite Teardown  Log to console  Goodbye!!!
 
 *** Variables ***
-${BASE_URL}    https://vaccine-haven.herokuapp.com/
-${SIGNUP_URL}    https://vaccine-haven.herokuapp.com/registration
+${MAIN_URL}    https://vaccine-haven.herokuapp.com/
 ${RESERV_URL}    https://vaccine-haven.herokuapp.com/reservation
+${INFO_URL}    https://vaccine-haven.herokuapp.com/info
 ${BROWSER}    gc
 ${MESSAGE}    hacking in progress...
 ${SITE_NAME}    OGYHSite
+${CITIZEN_ID}    9621054668494
 
 *** Keywords ***
 Go to
@@ -20,7 +21,7 @@ Go to
     Open Browser    ${wanted_url}  ${BROWSER}
     Set Selenium Speed    0.1
 
-Page Should Be Open
+Page Should Be
     [Arguments]    ${wanted_url}
     Location Should Be    ${wanted_url}
 
@@ -30,26 +31,24 @@ Input Information
 
 
 *** Test Cases ***
-Try to open signup page
-    Go to    ${SIGNUP_URL}
-    Page Should Be Open    ${SIGNUP_URL}
-
-Input Register Information
-    Go to    ${SIGNUP_URL}
-    # Input Information    Peter    Parker    123    5049044113691    spider-man    Newyork    spider-man@email.com    Amazing-Fantasy-#15
-    Input Information    citizen_id    5049044113691
-    Input Information    name    Peter
-    Input Information    surname    Parker
-    Input Information    birth_date    10-02-2004
-    Input Information    occupation    super hero
-    Input Information    phone_number    888-542-1721
-    Input Information    address    123st. wow city
-
-Input Reservation Information
+Try to open reservation page
     Go to    ${RESERV_URL}
-    Input Information    citizen_id    5049044113691
+    Page Should Be    ${RESERV_URL}
+
+Vaccine Reservation
+    Go to    ${RESERV_URL}
+    Input Information    citizen_id    ${CITIZEN_ID}
     Select From List by value    identifier=site_name    ${SITE_NAME}
-    Select From List by value    identifier=vaccine_name    Pfizer
     Select From List by value    identifier=vaccine_name    Astra
     Select From List by value    identifier=vaccine_name    Sinopharm
     Select From List by value    identifier=vaccine_name    Sinovac
+    Select From List by value    identifier=vaccine_name    Pfizer
+    Click Button    identifier=reserve__btn
+    Page Should Be    ${MAIN_URL}
+
+Cancel reservation
+    Go to    ${INFO_URL}
+    Input Information    citizen_id    ${CITIZEN_ID}
+    Click Button    identifier=info__btn
+    Wait Until Page Contains Element    identifier=cancel__btn
+    Click Button    identifier=cancel__btn
